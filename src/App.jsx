@@ -5,9 +5,16 @@ import Pad from './component/Pad'
 
 function App() {
   const [value, setValue]  = React.useState(data)
+
+  function toggle(id){
+    setValue(value.map(item=> item.id===id? {...item,on:!item.on}:item
+      
+    ))
+    
+  }
   const buttonElements = value.map((item)=>{
           return(
-            <Pad key={item.id} id = {item.id} color={item.color} on={item.on} />
+            <Pad key={item.id} id = {item.id} color={item.color} on={item.on} toggle={toggle} />
           )
         })
 

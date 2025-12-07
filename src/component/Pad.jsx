@@ -1,18 +1,12 @@
 import React from 'react'
 import data from "../data"
 
-const Pad = ({ color, on }) => {
-    const [value, setValue] = React.useState(on)
+const Pad = ({ color, on, toggle,id }) => {
 
-    const handleOnClick = () => {
-
-     
-        setValue(prevOn => !prevOn)
-
-    }
+ 
     return (
 
-        <button onClick={handleOnClick} style={{ backgroundColor: color }} className={value ? "on" : undefined}>{color}</button>
+        <button onClick={()=>toggle(id)} style={{ backgroundColor: color }} className={on ? "on" : undefined}>{color}</button>
 
 
     )
